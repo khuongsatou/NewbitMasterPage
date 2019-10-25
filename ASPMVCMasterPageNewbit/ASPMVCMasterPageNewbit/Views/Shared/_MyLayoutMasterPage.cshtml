@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Newsbit</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,600,700" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    @Styles.Render("~/Content/plugin-frameworks/bootstrap.css")
+
+    @*<link href="/Content/plugin-frameworks/bootstrap.css" rel="stylesheet">*@
+
+    @Styles.Render("~/Content/fonts/ionicons.css")
+    @*<link href="/Content/fonts/ionicons.css" rel="stylesheet">*@
+    @Styles.Render("~/Content/common/styles.css")
+
+    @*<link href="/Content/common/styles.css" rel="stylesheet">*@
+</head>
+<body>
+    @*
+        Nhúng Heder vô
+    *@
+
+    @Html.Partial("_Header")
+
+    @*
+        Nhúng index vô
+    *@
+
+    @RenderBody()
+
+    @*
+        Nội dung thay đổi
+    *@
+    <div class="container">
+        @RenderSection("containercontent", true);
+    </div><!-- container -->
+    @*
+        Nội Dung Thay Đổi
+    *@
+    <section>
+        <div class="container">
+            @RenderSection("sectioncontent")
+        </div><!-- container -->
+    </section>
+
+    @*
+        Nhúng Footer vô
+    *@
+
+    @{
+        Html.RenderPartial("_Footer");
+    }
+    <!-- SCIPTS -->
+    @Scripts.Render("~/Content/plugin-frameworks/jquery-3.2.1.min.js")
+    @Scripts.Render("~/Content/plugin-frameworks/tether.min.js")
+    @Scripts.Render("~/Content/plugin-frameworks/bootstrap.js")
+    @Scripts.Render("~/Content/common/scripts.js")
+
+    @*<script src="/Content/plugin-frameworks/jquery-3.2.1.min.js"></script>
+        <script src="/Content/plugin-frameworks/tether.min.js"></script>
+
+        <script src="/Content/plugin-frameworks/bootstrap.js"></script>
+
+        <script src="/Content/common/scripts.js"></script>*@
+</body>
+</html>
